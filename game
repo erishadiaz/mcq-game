@@ -1,0 +1,116 @@
+from tkinter import*
+from tkinter import ttk
+y = 0
+a = ttk.Notebook()
+frame1 = ttk.Frame(a)
+frame2 = ttk.Frame(a)
+frame3 = ttk.Frame(a)
+frame4 = ttk.Frame(a)
+frame5 = ttk.Frame(a)
+
+root = ttk.Frame(a)
+
+
+def quiz(a):
+    a.add(frame1, text='Q1')
+    a.add(frame2, text='Q2')
+    a.add(frame3, text='Q3')
+    a.add(frame4, text='Q4')
+    a.add(frame5, text='Q5')
+
+    Label(frame1, text='If you have six fish and half of them die from drowning,\n how many do you have?', font=('Arial', 20, 'bold')).grid(row=2, column=2)
+    Label(frame1, text='Option A',font=('Arial',15)).grid(row=3,column=1)
+    Label(frame1, text='Option B',font=('Arial',15)).grid(row=4,column=1)
+    Label(frame1, text='Option C',font=('Arial',15)).grid(row=5,column=1)
+    Label(frame1, text='Option D',font=('Arial',15)).grid(row=6,column=1)
+    Button(frame1, text='Six', font=("Arial",15,'bold'), bg='light blue',command=a1_correct,padx=20,pady=5).grid(row=3, column=2)
+    Button(frame1, text='Two', font=("Arial",15,'bold'), bg='light green',command=a1_wrong,padx=15,pady=5).grid(row=4, column=2)
+    Button(frame1, text='Four', font=("Arial",15,'bold'), bg='light pink',command=a1_wrong,padx=13,pady=5).grid(row=5, column=2)
+    Button(frame1, text='Three', font=("Arial",15,'bold'), bg='light pink',command=a1_wrong,padx=8,pady=5).grid(row=6, column=2)
+
+    Label(frame2, text='When I get multiplied by a number,\n the sum of the figures in the product is always me.\n What am I?', font=('Arial',20,'bold')).grid(row=2, column=2)
+    Label(frame2, text='Option A',font=('Arial',15)).grid(row=3,column=1)
+    Label(frame2, text='Option B',font=('Arial',15)).grid(row=4,column=1)
+    Label(frame2, text='Option C',font=('Arial',15)).grid(row=5,column=1)
+    Label(frame2, text='Option D',font=('Arial',15)).grid(row=6,column=1)
+    Button(frame2, text='8', font=("Arial",15,'bold'), bg='light blue',command=a2_wrong,padx=15,pady=5).grid(row=3, column=2)
+    Button(frame2, text='9', font=("Arial",15,'bold'), bg='light green',command=a2_correct,padx=15,pady=5).grid(row=4, column=2)
+    Button(frame2, text='2', font=("Arial",15,'bold'), bg='light pink',command=a2_wrong,padx=15,pady=5).grid(row=5, column=2)
+    Button(frame2, text='4', font=("Arial",15,'bold'), bg='light pink',command=a2_wrong,padx=15,pady=5).grid(row=6, column=2)
+    
+    Label(frame3, text='Rebecca weighs 98 pounds plus half her own weight.\n How much does she weigh?', font=('Arial', 20, 'bold')).grid(row=2, column=2)
+    Label(frame3, text='Option A',font=('Arial',15)).grid(row=3,column=1)
+    Label(frame3, text='Option B',font=('Arial',15)).grid(row=4,column=1)
+    Label(frame3, text='Option C',font=('Arial',15)).grid(row=5,column=1)
+    Label(frame3, text='Option D',font=('Arial',15)).grid(row=6,column=1)
+    Button(frame3, text='128', font=("Arial",15,'bold'), bg='light blue',command=a3_wrong,padx=10,pady=5).grid(row=3, column=2)
+    Button(frame3, text='196', font=("Arial",15,'bold'), bg='light green',command=a3_correct,padx=10,pady=5).grid(row=4, column=2)
+    Button(frame3, text='192', font=("Arial",15,'bold'), bg='light pink',command=a3_wrong,padx=10,pady=5).grid(row=5, column=2)
+    Button(frame3, text='184', font=("Arial",15,'bold'), bg='light pink',command=a3_wrong,padx=10,pady=5).grid(row=6, column=2)
+
+    Label(frame4, text='1 = 4\n 2 = 16\n 3 = 64\n 4 = ?', font=('Arial',20,'bold')).grid(row=2, column=2)
+    Label(frame4, text='Option A',font=('Arial',15)).grid(row=3,column=1)
+    Label(frame4, text='Option B',font=('Arial',15)).grid(row=4,column=1)
+    Label(frame4, text='Option C',font=('Arial',15)).grid(row=5,column=1)
+    Label(frame4, text='Option D',font=('Arial',15)).grid(row=6,column=1)
+    Button(frame4, text='125', font=("Arial",15,'bold'), bg='light blue',command=a4_wrong,padx=10,pady=5).grid(row=3, column=3)
+    Button(frame4, text='144', font=("Arial",15,'bold'), bg='light green',command=a4_wrong,padx=10,pady=5).grid(row=4, column=3)
+    Button(frame4, text='256', font=("Arial",15,'bold'), bg='light pink',command=a4_correct,padx=10,pady=5).grid(row=5, column=3)
+    Button(frame4, text='196', font=("Arial",15,'bold'), bg='light pink',command=a4_wrong,padx=10,pady=5).grid(row=6, column=3)
+
+    Label(frame5, text='A + B = 76\n A - B = 38\n A / B = ?', font=('Arial',20,'bold')).grid(row=2, column=2)
+    Label(frame5, text='Option A',font=('Arial',15)).grid(row=3,column=1)
+    Label(frame5, text='Option B',font=('Arial',15)).grid(row=4,column=1)
+    Label(frame5, text='Option C',font=('Arial',15)).grid(row=5,column=1)
+    Label(frame5, text='Option D',font=('Arial',15)).grid(row=6,column=1)
+    Button(frame5, text='3', font=("Arial",15,'bold'), bg='light blue',command=a5_correct,padx=10,pady=5).grid(row=3, column=3)
+    Button(frame5, text='2', font=("Arial",15,'bold'), bg='light green',command=a5_wrong,padx=10,pady=5).grid(row=4, column=3)
+    Button(frame5, text='1', font=("Arial",15,'bold'), bg='light pink',command=a5_wrong,padx=10,pady=5).grid(row=5, column=3)
+    Button(frame5, text='4', font=("Arial",15,'bold'), bg='light pink',command=a5_wrong,padx=10,pady=5).grid(row=6, column=3)
+    
+def a1_correct():
+    Label(frame1,text='correct',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame1,text='marks obtained : 1',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a1_wrong():
+    Label(frame1,text='incorrect',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame1,text='marks obtained : 0',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a2_correct():
+    Label(frame2,text='correct',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame2,text='marks obtained : 1',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a2_wrong():
+    Label(frame2,text='incorrect',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame2,text='marks obtained : 0',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a3_correct():
+    Label(frame3,text='correct',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame3,text='marks obtained : 1',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a3_wrong():
+    Label(frame3,text='incorrect',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame3,text='marks obtained : 0',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a4_correct():
+    Label(frame4,text='correct',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame4,text='marks obtained : 1',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a4_wrong():
+    Label(frame4,text='incorrect',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame4,text='marks obtained : 0',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a5_correct():
+    Label(frame5,text='correct',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame5,text='marks obtained : 1',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+
+def a5_wrong():
+    Label(frame5,text='incorrect',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=1)
+    Label(frame5,text='marks obtained : 0',font=('Arial',15,'bold'),background='black',fg='white').grid(row=1,column=3)
+    
+quiz(a)
+
+    
+a.pack()
+a.mainloop()
+
